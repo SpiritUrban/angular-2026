@@ -10,17 +10,35 @@
   <p class="note">Extra content is hidden. Click the button to show it.</p>
 }
 
-  <div class="pill-group">
-    @for (item of links; track item.title) {
-      <div class="pill">
-        <a class="pill-a" [href]="item.link" target="_blank" rel="noopener">
-          <span>{{ item.title }}</span>
+<div class="controls">
+  <button type="button" (click)="toggleTheme()">Theme: {{ appState.theme() }}</button>
+  <button type="button" (click)="startLoading()">Start loading</button>
+  <button type="button" (click)="stopLoading()">Stop loading</button>
+  <button type="button" (click)="notifyInfo()">Notify</button>
+</div>
 
-        </a>
-      </div>
-    }
-  </div>
+@if (appState.loading()) {
+  <div class="loading">Loading…</div>
+}
 
+<div class="notices">
+  @for (n of appState.notices(); track n.id) {
+    <div class="notice" [class]="'notice-' + n.type">
+      <span>#{{ n.id }} {{ n.type }}: {{ n.message }}</span>
+      <button type="button" (click)="appState.dismiss(n.id)">x</button>
+    </div>
+  }
+</div>
 
+<div class="pill-group">
+  @for (item of links; track item.title) {
+    <div class="pill">
+      <a class="pill-a" [href]="item.link" target="_blank" rel="noopener">
+        <span>{{ item.title }}</span>
+
+      </a>
+    </div>
+  }
+</div>
 
 <router-outlet />

@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AppStateService } from './core/app-state.service';
 
 @Component({
   selector: 'app-root',
@@ -23,4 +24,11 @@ export class App {
   toggleExtra = () => {
     this.showExtra.update(v => !v);
   };
+
+  readonly appState = inject(AppStateService);
+
+  toggleTheme = () => this.appState.toggleTheme();
+  startLoading = () => this.appState.startLoading();
+  stopLoading = () => this.appState.stopLoading();
+  notifyInfo = () => this.appState.notify('Hello from AppStateService');
 }
