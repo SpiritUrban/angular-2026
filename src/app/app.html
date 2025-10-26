@@ -30,6 +30,13 @@
   }
 </div>
 
+<app-toggle-panel
+  [title]="'Demo Panel'"
+  [(open)]="panelOpen"
+  [(value)]="panelValue"
+  (toggled)="onPanelToggled($event)"
+></app-toggle-panel>
+
 <div class="pill-group">
   @for (item of links; track item.title) {
     <div class="pill">

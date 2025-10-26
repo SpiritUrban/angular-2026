@@ -1,10 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { AppStateService } from './core/app-state.service';
+import { TogglePanelComponent } from './shared/toggle-panel.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, TogglePanelComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
@@ -31,4 +32,11 @@ export class App {
   startLoading = () => this.appState.startLoading();
   stopLoading = () => this.appState.stopLoading();
   notifyInfo = () => this.appState.notify('Hello from AppStateService');
+
+  // State for TogglePanelComponent (two-way via explicit input/output bindings with signals)
+  panelOpen = signal(false);
+  panelValue = signal('Hello');
+  onPanelToggled = (open: boolean) => {
+    this.appState.notify(open ? 'Panel opened' : 'Panel closed');
+  };
 }
