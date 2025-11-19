@@ -12,6 +12,7 @@ interface Notice {
 
 @Injectable({ providedIn: 'root' })
 export class AppStateService {
+  
   private _busyCount = signal(0);
   readonly loading = computed(() => this._busyCount() > 0);
 
