@@ -1,16 +1,10 @@
-## -1. Install and init NX
+## -1. Install NX
 
 Install nx globally:
 ```bash
 npm add --global nx
 ```
 
-Init nx workspace:
-```bash
-nx init
-```
-
- 
 
 
 
