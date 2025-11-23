@@ -30,7 +30,7 @@ npm add --global nx
 В корневой папке, где хочешь репозиторий:
 
 ```bash
-npx create-nx-workspace@latest app-monorepo
+npx create-nx-workspace@latest app-monorepo --preset=integrated
 ```
 
 Когда мастер спросит:
