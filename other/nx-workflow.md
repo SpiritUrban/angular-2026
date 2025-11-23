@@ -112,6 +112,8 @@ npx nx serve web
 Дальше добавляем NestJS. Всё так же через Nx:
 
 ```bash
+npm add -D @nx/nest
+
 npx nx g @nx/nest:application api
 ```
 
@@ -134,6 +136,7 @@ npx nx serve api
 ```
 
 Обычно Nest по дефолту на `http://localhost:3333` или что-то рядом (Nx так любит).
+Но по факту `http://localhost:3000`
 
 ---
 
