@@ -30,8 +30,15 @@ npm add --global nx
 В корневой папке, где хочешь репозиторий:
 
 ```bash
-npx create-nx-workspace@latest app-monorepo --preset=integrated
+npx create-nx-workspace@latest app-monorepo --preset=apps
 ```
+
+Но! Я сделал так как в доке на оф сайте
+```bash
+npx create-nx-workspace@latest
+```
+
+И дал название и выбрал фреймворк и выбрал монорепо в котором несколько приложений (apps/libs)
 
 Когда мастер спросит:
 
