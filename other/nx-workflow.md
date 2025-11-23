@@ -131,6 +131,7 @@ npx nx serve api
 
 Обычно Nest по дефолту на `http://localhost:3333` или что-то рядом (Nx так любит).
 Но по факту `http://localhost:3000`
+Проверяем `http://localhost:3000/api`
 
 ---
 
