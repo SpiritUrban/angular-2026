@@ -33,12 +33,6 @@ npm add --global nx
 npx create-nx-workspace@latest app-monorepo --preset=apps
 ```
 
-Но! Я сделал так как в доке на оф сайте
-```bash
-npx create-nx-workspace@latest
-```
-
-И дал название и выбрал фреймворк и выбрал монорепо в котором несколько приложений (apps/libs)
 
 Когда мастер спросит:
 
@@ -79,7 +73,7 @@ cd app-monorepo
 
 npm add -D @nx/angular
 
-npx nx g @nx/angular:application web --standalone=true --routing=true --style=scss
+npx nx g @nx/angular:application apps/web --standalone=true --routing=true --style=scss
 ```
 
 Пояснения:
@@ -115,7 +109,7 @@ npx nx serve web
 ```bash
 npm add -D @nx/nest
 
-npx nx g @nx/nest:application api
+npx nx g @nx/nest:application apps/api
 ```
 
 Nx создаст тебе:
