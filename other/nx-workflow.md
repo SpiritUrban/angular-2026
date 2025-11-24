@@ -156,9 +156,7 @@ npx nx serve api
 ### 5.1. Общий domain (pure TS / models / rules)
 
 ```bash
-npx nx g @nx/js:library orders-domain \
-  --directory=libs/orders/domain \
-  --unitTestRunner=jest
+npx nx g @nx/js:library orders-domain --directory=libs/orders/domain --unitTestRunner=jest
 ```
 
 Это создаст:
@@ -183,8 +181,7 @@ libs/
 Например, модуль для работы с базой / репозитории:
 
 ```bash
-npx nx g @nx/nest:library orders-data-access \
-  --directory=libs/orders/api-data-access
+npx nx g @nx/nest:library orders-data-access --directory=libs/orders/api-data-access
 ```
 
 Структура:
@@ -206,10 +203,7 @@ libs/
 ### 5.3. Data-access для фронта (Angular side)
 
 ```bash
-npx nx g @nx/angular:library orders-data-access \
-  --directory=libs/orders/web-data-access \
-  --standalone=false \
-  --routing=false
+npx nx g @nx/angular:library orders-data-access --directory=libs/orders/web-data-access --routing=false
 ```
 
 Здесь будут:
@@ -225,19 +219,13 @@ npx nx g @nx/angular:library orders-data-access \
 UI:
 
 ```bash
-npx nx g @nx/angular:library orders-ui \
-  --directory=libs/orders/web-ui \
-  --standalone=true \
-  --routing=false
+npx nx g @nx/angular:library orders-ui --directory=libs/orders/web-ui --routing=false
 ```
 
 Feature (контейнер + маршруты):
 
 ```bash
-npx nx g @nx/angular:library orders-feature \
-  --directory=libs/orders/web-feature \
-  --standalone=true \
-  --routing=true
+npx nx g @nx/angular:library orders-feature --directory=libs/orders/web-feature --routing=true
 ```
 
 ---
