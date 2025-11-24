@@ -181,7 +181,7 @@ libs/
 Например, модуль для работы с базой / репозитории:
 
 ```bash
-npx nx g @nx/nest:library orders-data-access --directory=libs/orders/api-data-access
+npx nx g @nx/nest:library --name=orders-data-access --directory=libs/orders/api-data-access
 ```
 
 Структура:
@@ -203,7 +203,7 @@ libs/
 ### 5.3. Data-access для фронта (Angular side)
 
 ```bash
-npx nx g @nx/angular:library orders-data-access --directory=libs/orders/web-data-access --routing=false
+npx nx g @nx/angular:library --name=orders-web-data-access --directory=libs/orders/web-data-access --routing=false
 ```
 
 Здесь будут:
