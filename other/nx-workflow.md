@@ -157,7 +157,7 @@ npx nx serve api
 
 ```bash
 npx nx g @nx/js:library orders-domain \
-  --directory=orders/domain \
+  --directory=libs/orders/domain \
   --unitTestRunner=jest
 ```
 
@@ -184,7 +184,7 @@ libs/
 
 ```bash
 npx nx g @nx/nest:library orders-data-access \
-  --directory=orders/api-data-access
+  --directory=libs/orders/api-data-access
 ```
 
 Структура:
@@ -207,7 +207,7 @@ libs/
 
 ```bash
 npx nx g @nx/angular:library orders-data-access \
-  --directory=orders/web-data-access \
+  --directory=libs/orders/web-data-access \
   --standalone=false \
   --routing=false
 ```
@@ -226,7 +226,7 @@ UI:
 
 ```bash
 npx nx g @nx/angular:library orders-ui \
-  --directory=orders/web-ui \
+  --directory=libs/orders/web-ui \
   --standalone=true \
   --routing=false
 ```
@@ -235,7 +235,7 @@ Feature (контейнер + маршруты):
 
 ```bash
 npx nx g @nx/angular:library orders-feature \
-  --directory=orders/web-feature \
+  --directory=libs/orders/web-feature \
   --standalone=true \
   --routing=true
 ```
@@ -310,42 +310,7 @@ npx nx graph
 
 3. Определить **контракт между frontend data-access ↔ backend API** (DTO, endpoints, error-handling, auth и т.д.)
 
----
 
-## 9. Сводка по шагам в командах
-
-Если собрать всё в один список (минимально нужное):
-
-```bash
-# 1. Создаём Nx workspace
-npx create-nx-workspace@latest app-monorepo
-
-cd app-monorepo
-
-# 2. Angular app
-npx nx g @nx/angular:application web --standalone=true --routing=true --style=scss
-
-# 3. NestJS app
-npx nx g @nx/nest:application api
-
-# 4. Общий домен
-npx nx g @nx/js:library orders-domain --directory=orders/domain --unitTestRunner=jest
-
-# 5. Data-access (backend)
-npx nx g @nx/nest:library orders-data-access --directory=orders/api-data-access
-
-# 6. Data-access (frontend)
-npx nx g @nx/angular:library orders-data-access --directory=orders/web-data-access --standalone=false --routing=false
-
-# 7. UI
-npx nx g @nx/angular:library orders-ui --directory=orders/web-ui --standalone=true --routing=false
-
-# 8. Feature
-npx nx g @nx/angular:library orders-feature --directory=orders/web-feature --standalone=true --routing=true
-
-# 9. Посмотреть граф
-npx nx graph
-```
 
 ---
 
