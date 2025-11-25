@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { OrdersUi } from '@app-monorepo/orders-ui';
 
 @Component({
   selector: 'lib-orders-feature',
-  imports: [],
+  standalone: true,
+  imports: [OrdersUi],
   templateUrl: './orders-feature.html',
   styleUrl: './orders-feature.css',
 })
