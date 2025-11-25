@@ -21,7 +21,9 @@
       ],
       "@app-monorepo/orders-web-data-access": [
         "libs/orders/web-data-access/src/index.ts"
-      ]
+      ],
+      "@app-monorepo/orders-ui": ["libs/orders/web-ui/src/index.ts"],
+      "@app-monorepo/orders-feature": ["libs/orders/web-feature/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

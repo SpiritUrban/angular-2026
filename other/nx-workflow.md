@@ -219,13 +219,13 @@ npx nx g @nx/angular:library --name=orders-web-data-access --directory=libs/orde
 UI:
 
 ```bash
-npx nx g @nx/angular:library orders-ui --directory=libs/orders/web-ui --routing=false
+npx nx g @nx/angular:library --name=orders-ui --directory=libs/orders/web-ui --routing=false
 ```
 
 Feature (контейнер + маршруты):
 
 ```bash
-npx nx g @nx/angular:library orders-feature --directory=libs/orders/web-feature --routing=true
+npx nx g @nx/angular:library --name=orders-feature --directory=libs/orders/web-feature --routing=true
 ```
 
 ---
